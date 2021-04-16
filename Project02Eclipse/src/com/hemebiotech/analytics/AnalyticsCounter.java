@@ -11,9 +11,12 @@ public class AnalyticsCounter {
 	
 	public static void main(String args[]) throws Exception {
 		// first get input
-		BufferedReader reader = new BufferedReader (new FileReader("symptoms.txt"));
+		try{
+		@SuppressWarnings("resource")
+		BufferedReader reader = new BufferedReader (new FileReader("Project_DA_Java_EN_Come_to_the_Rescue_of_a_Java_Application/Project02Eclipse/symptoms.txt"));
 		String line = reader.readLine();
 
+		@SuppressWarnings("unused")
 		int i = 0;	// set i to 0
 		int headCount = 0;	// counts headaches
 		while (line != null) {
@@ -39,5 +42,8 @@ public class AnalyticsCounter {
 		writer.write("rash: " + rashCount + "\n");
 		writer.write("dialated pupils: " + pupilCount + "\n");
 		writer.close();
+		}catch(java.io.FileNotFoundException e) {
+			System.out.println("Le fichier est n'existe pas!");
+		}
 	}
 }
