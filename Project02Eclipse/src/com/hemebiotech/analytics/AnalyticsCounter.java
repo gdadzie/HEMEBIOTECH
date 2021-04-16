@@ -43,7 +43,7 @@ public class AnalyticsCounter {
 		writer.write("dialated pupils: " + pupilCount + "\n");
 		writer.close();
 		}catch(java.io.FileNotFoundException e) {
-			System.out.println("Le fichier est n'existe pas!");
+			System.out.println("Erreur-Le fichier est n'existe pas!");
 		}
 	}
 }
